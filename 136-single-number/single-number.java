@@ -5,6 +5,6 @@ class Solution {
         for(int i=0;i<nums.length;i++){
             res = res^nums[i];
         }
-        return res;
+        return res;  
     }
 }
