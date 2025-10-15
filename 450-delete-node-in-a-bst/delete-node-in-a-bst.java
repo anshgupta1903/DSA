@@ -35,14 +35,19 @@ class Solution {
             }
         // Two child
             else{
-                TreeNode temp =  root.right;
-                while(temp.left != null){
-                    temp = temp.left;
-                }
+                TreeNode temp =  findMin(root.right);
+                // while(temp.left != null){
+                //     temp = temp.left;
+                // }
                 root.val = temp.val;
                 root.right = deleteNode(root.right, temp.val);
             }
         }
         return root;
+    }
+
+    public TreeNode findMin(TreeNode root){
+        if(root.left == null) return root;
+        return findMin(root.left);
     }
 }
