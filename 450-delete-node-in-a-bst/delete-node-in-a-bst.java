@@ -36,9 +36,7 @@ class Solution {
         // Two child
             else{
                 TreeNode temp =  findMin(root.right);
-                // while(temp.left != null){
-                //     temp = temp.left;
-                // }
+               
                 root.val = temp.val;
                 root.right = deleteNode(root.right, temp.val);
             }
