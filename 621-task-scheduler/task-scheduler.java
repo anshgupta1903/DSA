@@ -10,7 +10,7 @@ class Solution {
             if(max == freq[i]) count++;
         }
         
-        return Math.max(tasks.length,max + (max-1)*n + count-1);
+        return Math.max(tasks.length,(max - 1) * (n + 1) + count) ;
         
     }
     private int[] freqEle(char[] tasks) {
