@@ -13,7 +13,7 @@ class Solution {
 
         if(i<0 || j<0) return 0;
         if(dp[i][j]!=-1) return dp[i][j];
-        if(text1.charAt(i) == text2.charAt(j)) return help(text1,text2, i-1, j-1)+1;
+        if(text1.charAt(i) == text2.charAt(j)) return dp[i][j] = help(text1,text2, i-1, j-1)+1;
 
         return dp[i][j] = Math.max(help(text1, text2, i-1,j),help(text1,text2,i,j-1)) ;
         
