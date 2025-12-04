@@ -1,11 +1,16 @@
 class Solution {
     public boolean isSubsequence(String s, String t) {
-        return solve(s, t, s.length()-1, t.length()-1);
+       int n = s.length();
+       int m = t.length();
+       int[][] dp = new int[n+1][m+1];
+       for(int i=1;i<=n;i++){
+        for(int j=1;j<=m;j++){
+            if(s.charAt(i-1)==t.charAt(j-1)) dp[i][j] = 1+dp[i-1][j-1];
+            else dp[i][j] = Math.max(dp[i][j-1], dp[i-1][j]);
+        }
+       }
+       if(dp[n][m]==n) return true;
+       return false;
     }
-    public boolean solve(String s, String t, int i, int j){
-        if(i<0)return true;
-        if(j<0) return false;
-        if(s.charAt(i) == t.charAt(j)) return solve(s, t, i-1,j-1);
-        return solve(s,t,i,j-1);
-    }
+    
 }
