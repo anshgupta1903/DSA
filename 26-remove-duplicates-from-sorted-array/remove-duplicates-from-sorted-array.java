@@ -3,8 +3,7 @@ class Solution {
         int pos = 1;
         int count = 1;
         int n = nums.length;
-        if(n==2 && nums[0] != nums[1]) return 2;
-        else if(n==2) return 1;
+        
         for(int i=1; i<n; i++){
         
             // if(nums[i]==nums[i-1])count++;
